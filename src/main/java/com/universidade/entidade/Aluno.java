@@ -3,12 +3,15 @@ package com.universidade.entidade;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
-//@Entity
+@Entity
 @Data
 public class Aluno {
 	
@@ -26,9 +29,10 @@ public class Aluno {
 	
 	@NotNull
 	private String status;
-
 	
-	private List<Curso> listCurso;
+//	@JoinColumn(name = "curso", referencedColumnName = "id")
+//	@ManyToOne(fetch = FetchType.LAZY)
+	private int curso;
 	
 	@NotNull
 	private String dataMatricula;
